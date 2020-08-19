@@ -55,4 +55,5 @@ update-rc.d 3proxy defaults
 echo "Finish! Fail2ban, UFW, 3proxy Configured! Proxy IP:Port" 
 ip=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 port=$(grep -Po '(?<=socks -p)((?=\d).{1,5})' '/etc/3proxy/3proxy.cfg')
-echo "${ip}:${port}"
+echo -e "\033[0;31m" "${ip}:${port}"
+tput sgr0
