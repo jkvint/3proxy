@@ -1,3 +1,26 @@
+##fail2ban
+
+apt install fail2ban
+
+rm -rf /etc/fail2ban/jail.local
+touch /etc/fail2ban/jail.local
+
+cat <<EOF >> /etc/fail2ban/jail.local
+
+[DEFAULT]
+ignoreip = 176.37.95.127
+bantime = 86400
+maxretry = 3
+findtime = 1800
+
+[sshd]
+enabled = true
+port = ssh
+action = iptables[name=SSH, port=ssh, protocol=tcp]
+EOF
+service fail2ban restart
+
+## ufw
 ufw default deny incoming
 ufw default allow outgoing
 
@@ -6,6 +29,8 @@ ufw allow 8088
 
 echo "y" | ufw enable
 
+
+##3proxy 
 version=0.8.13
 apt-get update && apt-get -y upgrade
 apt-get install gcc make git libc6-dev -y
