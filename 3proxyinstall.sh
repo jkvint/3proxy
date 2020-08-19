@@ -1,3 +1,11 @@
+ufw default deny incoming
+ufw default allow outgoing
+
+ufw allow ssh
+ufw allow 8088
+
+echo "y" | ufw enable
+
 version=0.8.13
 apt-get update && apt-get -y upgrade
 apt-get install gcc make git libc6-dev -y
