@@ -51,3 +51,8 @@ cd /etc/init.d/
 wget --no-check-certificate  https://raw.githubusercontent.com/jkvint/3proxy/master/3proxy?token=ADFSQRA7GJ73Z6UL726DLLC7HVJPS
 chmod  +x /etc/init.d/3proxy
 update-rc.d 3proxy defaults
+
+echo "Finish! Fail2ban, UFW, 3proxy Configured! Proxy IP:Port" 
+ip=$(ip -4 addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
+port=$(grep -Po '(?<=socks -p)((?=\d).{1,5})' '/etc/3proxy/3proxy.cfg')
+echo "${ip}:${port}"
