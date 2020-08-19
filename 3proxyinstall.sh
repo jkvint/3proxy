@@ -15,6 +15,6 @@ mkdir /var/log/3proxy/
 wget --no-check-certificate https://github.com/jkvint/3proxy/raw/master/.proxyauth
 chmod 600 /etc/3proxy/.proxyauth
 cd /etc/init.d/
-wget --no-check-certificate  https://raw.github.com/jkvint/3proxy/master/3proxy
+wget --no-check-certificate  https://raw.githubusercontent.com/jkvint/3proxy/master/3proxy?token=ADFSQRA7GJ73Z6UL726DLLC7HVJPS
 chmod  +x /etc/init.d/3proxy
 update-rc.d 3proxy defaults
