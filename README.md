@@ -7,7 +7,7 @@ A simple script to install 3proxy on Ubuntu/Debian
 
 Install :
 
-    wget --no-check-certificate https://raw.github.com/jkvint/3proxyhide/master/3proxyinstall.sh
+    wget --no-check-certificate https://raw.githubusercontent.com/jkvint/3proxy/master/3proxyinstall.sh?token=ADFSQREJ63OLHUPOLGKBLI27HVGZO
     chmod +x 3proxyinstall.sh
     ./3proxyinstall.sh
 
